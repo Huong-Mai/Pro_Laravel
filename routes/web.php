@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Route::get('index',['as'=>'trang-chu','uses'=>'PageController@getIndex']);
 Route::get('loai-sp/{loai}',
-	['as'=>'loai-sp', 
+	['as'=>'loai-sp',
 	'uses'=>'PageController@getloaisp']);
 
 Route::get('san-pham/{masp}',
@@ -26,8 +26,8 @@ Route::get('lien-he',['as'=>'lien-he', 'uses'=>'PageController@getlienhe']);
 
 Route::get('gioi-thieu',['as'=>'gioi-thieu', 'uses'=>'PageController@getgioithieu']);
 
-Route::get('dang-nhap',['as'=>'dang-nhap','uses'=>'PageController@getlogin']);
-
-Route::get('dang-ki',['as'=>'dang-ki','uses'=>'PageController@getsignup']);
-Route::post('dang-ki',['as'=>'dang-ki','uses'=>'PageController@postsignup']);
+Route::get('dang-nhap',['as'=>'dang-nhap','uses'=>'UserController@getlogin']);
+Route::post('dang-nhap',['as'=>'dang-nhap','uses'=>'UserController@postlogin']);
+Route::get('dang-ki',['as'=>'dang-ki','uses'=>'UserController@getsignup']);
+Route::post('dang-ki',['as'=>'dang-ki','uses'=>'UserController@postsignup']);
 

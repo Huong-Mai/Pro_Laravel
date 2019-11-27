@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class hoadon extends Model
 {
     //
-    protested $table = "hoadon";
+    protected $table = "hoadon";
 }

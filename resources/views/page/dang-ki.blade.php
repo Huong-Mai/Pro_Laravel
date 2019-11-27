@@ -13,10 +13,10 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		<div id="content">
-			
+
 			<form action="{{route('dang-ki')}}" method="post" class="beta-form-checkout">
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 				<div class="row">
@@ -29,7 +29,7 @@
 						</div>
 					@endif
 					@if(Session::has('thanhcong'))
-					<div class="alert alert-success">{{Secsion::get(thanhcong)}}</div>
+					<div class="alert alert-success">{{Session::get('thanhcong')}}</div>
 					@endif
 					<div class="col-sm-6">
 						<h4>Đăng kí</h4>
@@ -60,11 +60,11 @@
 						</div>
 						<div class="form-block">
 							<label for="phone">Mật khẩu*</label>
-							<input type="text" name="password" required>
+							<input type="password" name="password" required>
 						</div>
 						<div class="form-block">
 							<label for="phone">Nhập lại mật khẩu*</label>
-							<input type="text" name="re_password" required>
+							<input type="password" name="re_password" required>
 						</div>
 						<div class="form-block">
 							<button type="submit" class="btn btn-primary">Đăng kí</button>
