@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\slide;
 use App\sanpham;
 use App\loaisp;
-use App\taikhoan;
+use App\user;
 use App\khachhangtv;
 //use hash;
 use Session;

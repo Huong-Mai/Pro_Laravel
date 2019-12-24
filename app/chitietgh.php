@@ -11,9 +11,9 @@ class chitietgh extends Model
 
     //moi qh với sanpham và gio hang
     public function sanpham(){
-    	return $this->hasMany('App\sanpham','MaSP','ID');
+    	return $this->belongTo('App\sanpham','MaSP','MaGH');
     }
     public function giohang(){
-    	return $this->
+    	return $this->belongTo('App\giohang','MaGH');
     }
 }

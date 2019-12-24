@@ -16,26 +16,30 @@
 
 	<div class="container">
 		<div id="content">
-
         <form action="{{route('dang-nhap')}}" method="post" class="beta-form-checkout">
-        <input type="hidden" name=""_token value="{{csrf_token()}}">
+        @csrf
 				<div class="row">
-                    <div class="col-sm-3"></div>
-                    @if(Session::has('flag'))
-                    <div class="alert alert-{{Session::get('flag')}}">{{Session::get('message')}}</div>
+                    <div class="col-sm-3">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
+                    </div>
 					<div class="col-sm-6">
 						<h4>Đăng nhập</h4>
 						<div class="space20">&nbsp;</div>
-
-
 						<div class="form-block">
 							<label for="email">Tên đăng nhập: *</label>
-							<input type="text" name="username" required>
+							<input type="text" name="username">
 						</div>
 						<div class="form-block">
-							<label for="pass">Password*</label>
-							<input type="password" name="password" required>
+							<label for="pass">Password: *</label>
+							<input type="password" name="password" >
 						</div>
 						<div class="form-block">
 							<button type="submit" class="btn btn-primary">Đăng nhập</button>

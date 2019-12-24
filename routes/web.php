@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//tạo bảng
+
 Route::get('index',['as'=>'trang-chu','uses'=>'PageController@getIndex']);
 Route::get('loai-sp/{loai}',
 	['as'=>'loai-sp',
@@ -26,8 +28,16 @@ Route::get('lien-he',['as'=>'lien-he', 'uses'=>'PageController@getlienhe']);
 
 Route::get('gioi-thieu',['as'=>'gioi-thieu', 'uses'=>'PageController@getgioithieu']);
 
-Route::get('dang-nhap',['as'=>'dang-nhap','uses'=>'UserController@getlogin']);
-Route::post('dang-nhap',['as'=>'dang-nhap','uses'=>'UserController@postlogin']);
-Route::get('dang-ki',['as'=>'dang-ki','uses'=>'UserController@getsignup']);
-Route::post('dang-ki',['as'=>'dang-ki','uses'=>'UserController@postsignup']);
+Route::get('dang-nhap',['as'=>'dang-nhap','uses'=>'Auth\LoginController@getLogin']);
+Route::post('dang-nhap',['as'=>'dang-nhap','uses'=>'Auth\LoginController@postLogin']);
+Route::get('dang-ki',['as'=>'dang-ki','uses'=>'Auth\LoginController@getsignup']);
+Route::post('dang-ki',['as'=>'dang-ki','uses'=>'Auth\LoginController@postsignup']);
+
+Route::get('admin', function () {
+    return view('admin.index_admin');
+});
+// Route::get('admin', function () {
+//     return view('admin.header_admin');
+// });
+
 

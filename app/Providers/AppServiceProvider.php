@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\loaisp;
-use App\giohang;
+use App\Cart;
 use Session;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,11 +28,12 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         view()->composer('header',function($view){
-           /* if(session('giohang')){
-                $ghcu = session::get('giohang');
-                $giohang = new giohang($ghcu);
-            }*/
+            // if(session('cart')){
+            //     $ghcu = session::get('cart');
+            //     $giohang = new Cart($ghcu);
+            // }
             $loaisp = loaisp::all();
+            //$view->with(['loaisp',$loaisp,'cart'=>Session::get('cart'),'product_cart'=>$cart->items, 'totalPrice'=>$cart->totalPrice,'totalQly'=>$cart->totalQly]);
             $view->with('loaisp',$loaisp);
         });
 
