@@ -28,38 +28,18 @@
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/1.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
 
-								<div class="cart-item">
+                                <div class="cart-item">
 									<div class="media">
-										<a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/2.png" alt=""></a>
+                                    <a class="pull-left" href="#"><img src="source/image/product/" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-title">$product->TenSP</span>
 											<span class="cart-item-options">Size: XS; Colar: Navy</span>
 											<span class="cart-item-amount">1*<span>$49.50</span></span>
 										</div>
 									</div>
-								</div>
+                                </div>
 
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/3.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
 
 								<div class="cart-caption">
 									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">$34.55</span></div>

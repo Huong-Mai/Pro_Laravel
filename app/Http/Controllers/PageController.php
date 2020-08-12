@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\slide;
 use App\sanpham;
 use App\loaisp;
-use App\taikhoan;
+use App\user;
 use App\khachhangtv;
+//use hash;
 use Session;
 class PageController extends Controller
 {
@@ -47,52 +48,7 @@ class PageController extends Controller
 	public function getgioithieu(){
 		return view('page.gioi-thieu');
 	}
-	public function getlogin(){
-		return view('page.dang-nhap');
-	}
-	public function postlogin(){
 
-	}
-	public function getsignup(){
-		return view('page.dang-ki');
-	}
-	public function postsignup(Request $req){
-		$this->validate($req,
-			[
-			'email'=>'required|email',
-			'fullname'=>'required',
-			'username'=>'required|unique:taikhoan,TenDN',
-			'password'=>'required|min:6|max:20',
-			're_password'=>'required|same:password'
 
-		],
-		[
-			'email.required'=>'Vui lòng nhập email',
-			'email.email'=>'Không đúng định dạng email',
-			'fullname.required'=>'Vui lòng nhập họ và tên',
-			'username.required'=>'Vui lòng nhập tên đăng nhập',
-			'username.unique'=>'Tên đăng nhập đã có người sử dụng',
-			'password.required'=>'Vui long nhập mật khẩu',
-			'password.min'=>'Mật khẩu ít nhật 6 kí tự',
-			'password.max'=>'Mật khẩu nhiều nhất 20 kí tự',
-			're_password.required'=>'Vui lòng nhập lại mật khẩu',
-			're_password.same'=>'Mật khẩu không giống nhau'
-		]);
-
-		$khtv = new khachhangtv();
-		$account = new taikhoan();
-		$khtv->Hoten = $req->fullname;
-		$khtv->Email = $req->email;
-		$khtv->TenDN = $req->username;
-		$account->TenDN = $req->username;
-		$account->Matkhau =hash::make($req->password);
-		$khtv->SDT =$req->phone;
-		$khtv->Diachi= $req->adress;
-		$khtv->save();
-		$account->save();
-		return redirect()->back()->with('thanhcong','Đăng kí tài khaonr thành công!');
-
-	}
-	
 }
 
